@@ -47,14 +47,14 @@ class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITable
                 //self.tableView.reloadData()
                 //print(dataDictionary)
                 
-                
+                /*
                 let movies = dataDictionary["results"] as! [[String: Any]]
                 for movie in movies {
                     let title =  movie ["title"] as! String
                     print(title)
-                }
-                //self.movies = dataDictionary["results"] as! [[String: Any]]
-                //self.tableView.reloadData()
+                }*/
+                self.movies = dataDictionary["results"] as! [[String: Any]]
+                self.tableView.reloadData()
                 
             }
             
@@ -65,21 +65,33 @@ class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-      return 20
+      return self.movies.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
-        //let movie = movies[indexPath.row]
-        //let title = movie["title"] as! String
-        //let overview = movie["overview"] as! String
-        //cell.titleLabel.text = title
-        //cell.overviewTextView.text = overview
+        let movie = movies[indexPath.row]
+        let title = movie["title"] as! String
+        let overview = movie["overview"] as! String
+        cell.titleLabel.text = title
+        cell.overviewTextView.text = overview
         
         cell.textLabel?.text = "row \(indexPath.row)"
         print("row \(indexPath.row)")
         return cell
     }
-    
+    /*
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        let title = movie["title"] as! String
+        let overview = movie["overview"] as! String
+        cell.titleLabel.text = title
+        cell.overviewTextView.text = overview
+        
+        return cell
+        
+    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

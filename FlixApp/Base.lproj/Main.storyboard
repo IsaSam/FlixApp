@@ -50,6 +50,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="overviewTextView" destination="bge-3q-Ldi" id="En1-c3-yjc"/>
+                                            <outlet property="titleLabel" destination="8ce-0w-8VF" id="alN-jR-P0z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
