@@ -8,10 +8,7 @@
 
 import UIKit
 
-class MoviePlayingViewController:
-    UIViewController,
-    UITableViewDelegate,
-UITableViewDataSource{
+class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,11 +19,9 @@ UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //tableView.dataSource = self
-        //tableView.delegate = self
-        
-        
-        
+        tableView.dataSource = self
+        tableView.delegate = self
+
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         
@@ -41,7 +36,7 @@ UITableViewDataSource{
             } else if let data = data,
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]{
                 // ----- first
-                //print(dataDictionary)
+                print(dataDictionary)
                 
                 // Get the dictionary from the response key
                 //let responseDictionary = dataDictionary["response"] as! [String: Any]
@@ -49,14 +44,14 @@ UITableViewDataSource{
                 //self.tableView.reloadData()
                 //print(dataDictionary)
                 
-                /*
+                
                 let movies = dataDictionary["results"] as! [[String: Any]]
                 for movie in movies {
                     let title =  movie ["title"] as! String
                     print(title)
-                }*/
-                self.movies = dataDictionary["results"] as! [[String: Any]]
-                self.tableView.reloadData()
+                }
+                //self.movies = dataDictionary["results"] as! [[String: Any]]
+                //self.tableView.reloadData()
                 
             }
             
