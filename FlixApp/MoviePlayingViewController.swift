@@ -22,8 +22,8 @@ UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        //tableView.dataSource = self
+        //tableView.delegate = self
         
         
         
@@ -70,18 +70,16 @@ UITableViewDataSource{
       return 20
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as MovieCell
-        let movie = movies[indexPath.row]
-        let title = movie["title"] as! String
-        let overview = movie["overview"] as! String
-        cell.titleLabel.text = title
-        cell.overviewTextView.text = overview
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        //let movie = movies[indexPath.row]
+        //let title = movie["title"] as! String
+        //let overview = movie["overview"] as! String
+        //cell.titleLabel.text = title
+        //cell.overviewTextView.text = overview
         
-        /*
         cell.textLabel?.text = "row \(indexPath.row)"
         print("row \(indexPath.row)")
-        return cell*/
+        return cell
     }
     
     
