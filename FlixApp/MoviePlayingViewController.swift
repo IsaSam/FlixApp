@@ -39,10 +39,8 @@ class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITable
         task.resume()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
       return self.movies.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
         let movie = movies[indexPath.row]
@@ -50,6 +48,15 @@ class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITable
         let overview = movie["overview"] as! String
         cell.titleLabel.text = title
         cell.overviewTextView.text = overview
+        
+        if let posterPath = movie["poster_path"] as? String{
+            let posterBaseUrl = "https://image.tmdb.org/t/p/w500"
+            let posterUrl = URL(string:  posterBaseUrl + posterPath)
+            cell.MoviesImageView.af_setImage(withURL: posterUrl!)
+        }
+        else{
+            cell.MoviesImageView.image = nil
+        }
 
         return cell
     }
