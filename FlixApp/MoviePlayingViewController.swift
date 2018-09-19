@@ -21,8 +21,8 @@ class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(MoviePlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.addTarget(self, action: #selector(MoviePlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
 
         tableView.delegate = self
         tableView.rowHeight = 168
@@ -46,14 +46,19 @@ class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITable
         let task = session.dataTask(with: request) {(data, response, error) in
             //-- This will run when the network request returns
             if let error = error{
+                let errorAlertController = UIAlertController(title: "Cannot Get Movies", message: "The Internet connections appears to be offline", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Retry", style: .cancel)
+                errorAlertController.addAction(cancelAction)
+                self.present(errorAlertController, animated: true)
                 print(error.localizedDescription)
             } else if let data = data,
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]{
-                print(dataDictionary)
+                //print(dataDictionary)
                 self.movies = dataDictionary["results"] as! [[String: Any]]
                 self.tableView.reloadData()
-                self.refreshControl.endRefreshing()
+                
             }
+            self.refreshControl.endRefreshing()
         }
         task.resume()
         activityIndicator.stopAnimating()
@@ -80,7 +85,9 @@ class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITable
 
         return cell
     }
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
