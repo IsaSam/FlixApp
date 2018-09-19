@@ -10,18 +10,27 @@ import UIKit
 import AlamofireImage
 
 
-class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
+class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var searchBar: UISearchBar!
+
     
     var movies: [[String: Any]] = []
-    
+    var searchController: UISearchController!
+    var reasultsController = UITableViewController()
     var refreshControl: UIRefreshControl!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.searchController = UISearchController(searchResultsController: self.reasultsController)
+        self.tableView.tableHeaderView = self.searchController.searchBar
+        self.searchController.searchResultsUpdater = self
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl.addTarget(self, action: #selector(MoviePlayingViewController.didPullToRefresh(_:)), for: .valueChanged)
@@ -32,7 +41,7 @@ class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITable
         
         tableView.insertSubview(refreshControl, at: 0)
         tableView.dataSource = self
-        searchBar.delegate = self
+        //searchBar.delegate = self
         fetchMovies()
         
     }
