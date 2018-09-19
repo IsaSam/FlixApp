@@ -10,11 +10,13 @@ import UIKit
 import AlamofireImage
 
 
-class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var movies: [[String: Any]] = []
+    
     var refreshControl: UIRefreshControl!
     
     
@@ -30,6 +32,7 @@ class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITable
         
         tableView.insertSubview(refreshControl, at: 0)
         tableView.dataSource = self
+        searchBar.delegate = self
         fetchMovies()
         
     }
@@ -85,6 +88,7 @@ class MoviePlayingViewController: UIViewController, UITableViewDelegate, UITable
 
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
