@@ -29,19 +29,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="187.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="Kkr-4L-ZcT">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="now_playing_tabbar_item" id="Kkr-4L-ZcT">
                                                     <rect key="frame" x="9" y="11" width="108" height="160"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="The Predator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8ce-0w-8VF">
-                                                    <rect key="frame" x="125" y="11" width="184" height="21"/>
+                                                    <rect key="frame" x="132" y="11" width="177" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="justified" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bge-3q-Ldi">
-                                                    <rect key="frame" x="125" y="40" width="184" height="131"/>
+                                                    <rect key="frame" x="132" y="40" width="177" height="131"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">From the outer reaches of space to the small-town streets of suburbia, the hunt comes home. Now, the universe’s most lethal hunters are stronger, smarter and deadlier than ever before, having genetically upgraded themselves with DNA from other species. When a young boy accidentally triggers their return to Earth, only a ragtag crew of ex-soldiers and a disgruntled science teacher can prevent the end of the human race.</string>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
@@ -51,6 +51,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="MoviesImageView" destination="Kkr-4L-ZcT" id="jws-w8-7ro"/>
                                             <outlet property="overviewTextView" destination="bge-3q-Ldi" id="En1-c3-yjc"/>
                                             <outlet property="titleLabel" destination="8ce-0w-8VF" id="alN-jR-P0z"/>
                                         </connections>
@@ -69,4 +70,7 @@
             <point key="canvasLocation" x="85" y="148"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="now_playing_tabbar_item" width="21" height="21"/>
+    </resources>
 </document>
