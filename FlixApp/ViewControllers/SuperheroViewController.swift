@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SuperheroViewController: UIViewController, UICollectionViewDataSource{
+class SuperheroViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -68,6 +68,14 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource{
         }
         task.resume()
         //activityIndicator.stopAnimating()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView.indexPath(for: cell)
+        let movie = movies[(indexPath?.row)!]
+        let detailViewController = segue.destination as! DetailViewController
+        detailViewController.movie = movie
     }
 
     override func didReceiveMemoryWarning() {

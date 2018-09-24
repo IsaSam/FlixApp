@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149" y="148"/>
+            <point key="canvasLocation" x="1063" y="148"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="u57-q5-Z4u">
@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpd-mW-tVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1589" y="148"/>
+            <point key="canvasLocation" x="1514" y="148"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="8jk-eH-VPh">
@@ -169,7 +169,7 @@
             </objects>
             <point key="canvasLocation" x="85" y="148"/>
         </scene>
-        <!--Superhero View Controller-->
+        <!--Movies Collections-->
         <scene sceneID="c9X-by-wIr">
             <objects>
                 <viewController id="TA3-Nc-bmN" customClass="SuperheroViewController" customModule="FlixApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -203,6 +203,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="posterImageView" destination="0tF-gg-yFD" id="Nea-gq-fJL"/>
+                                            <segue destination="Y2Y-UA-c4w" kind="push" id="fF6-Qv-Qsn"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -210,7 +211,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" id="esb-Xz-Ocg"/>
+                    <navigationItem key="navigationItem" title="Movies Collections" id="esb-Xz-Ocg"/>
                     <connections>
                         <outlet property="collectionView" destination="INJ-7m-BXM" id="k15-Ln-erc"/>
                     </connections>
@@ -243,4 +244,7 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fF6-Qv-Qsn"/>
+    </inferredMetricsTieBreakers>
 </document>
