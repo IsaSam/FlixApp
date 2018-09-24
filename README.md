@@ -35,7 +35,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='FlixWalkThough1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='FlixWalkThough1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough Flix Part 1' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -55,7 +55,7 @@ Time spent: **2** hours spent in total
 The following **required** functionality is completed:
 
 - [X] User can tap a cell to see a detail view (+5pts)
-- [ ] User can tap a tab bar button to view a grid layout of Movie Posters using a CollectionView (+5pts)
+- [X] User can tap a tab bar button to view a grid layout of Movie Posters using a CollectionView (+5pts)
 
 The following **stretch** features are implemented:
 
@@ -79,7 +79,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='FlixWalkThough2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='FlixWalkThough2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough Flix Part 2' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
