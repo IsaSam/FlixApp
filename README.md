@@ -31,7 +31,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 1.
 2.
 
-## Video Walkthrough
+## Video Walkthrough Project 1
 
 Here's a walkthrough of implemented user stories:
 
@@ -75,7 +75,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 1.
 2.
 
-## Video Walkthrough
+## Video Walkthrough Project 2
 
 Here's a walkthrough of implemented user stories:
 
