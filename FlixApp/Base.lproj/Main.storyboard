@@ -177,7 +177,7 @@
             </objects>
             <point key="canvasLocation" x="85" y="148"/>
         </scene>
-        <!--Movies Collections-->
+        <!--Super Hero Collections-->
         <scene sceneID="c9X-by-wIr">
             <objects>
                 <viewController id="TA3-Nc-bmN" customClass="SuperheroViewController" customModule="FlixApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -219,7 +219,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Movies Collections" id="esb-Xz-Ocg"/>
+                    <navigationItem key="navigationItem" title="Super Hero Collections" id="esb-Xz-Ocg"/>
                     <connections>
                         <outlet property="collectionView" destination="INJ-7m-BXM" id="k15-Ln-erc"/>
                     </connections>
