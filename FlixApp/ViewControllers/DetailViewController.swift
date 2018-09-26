@@ -21,6 +21,8 @@ class DetailViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var playMoviesButton: UIBarButtonItem!
+    @IBOutlet weak var playMoviesImageButton: UIButton!
+    @IBOutlet weak var playMoviesBackButton: UIButton!
     
     var movie: [String: Any]?
     
